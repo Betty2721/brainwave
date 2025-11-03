@@ -17,64 +17,57 @@ const Benefits = () => {
                 title="Chat Smarter, Not Harder with Brainwave"  
                 />
 
-            <div className="flex flex-wrap gap-10 mb-10">
-              {benefits.map((item) => (
-                <div className="group block relative p-0.5 overflow-hidden
-                  bg-no-repeat bg-[length:100%_100%]
-                  md:max-w-[24rem]"
-                  style={{
-                       backgroundImage: `url(${item.
-                       backgroundUrl})`,
-                  }} 
-                    key={item.id}>
-                    <div className="relative z-2 flex flex-col
-                    min-h-[22rem] p-[2.4rem]">
-                       <h5 className="h5 mb-5">{item.title}</h5>
-                       <p className="body-2 mb-6 text-n-3">
-                         {item.text}</p> 
-                       <div className="flex items-center
-                         mt-auto">
-                          <img 
-                              src={item.iconUrl}
-                              width={48}
-                              height={48}
-                              alt={item.title}
-                          />
-                          <p className="ml-auto font-code
-                            text-xs font-bold text-n-1 uppercase
-                            tracking-wider">
-                          Explore more
-                          </p>
-                          <Arrow />
-                       </div>
-                    </div>
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10 mb-10">
+  {benefits.map((item) => (
+    <div 
+      className="group block relative p-0.5 overflow-hidden bg-no-repeat bg-[length:100%_100%] 
+                 w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-21px)] lg:w-[calc(33.333%-27px)] xl:w-[calc(33.333%-30px)] 
+                 max-w-sm md:max-w-none"
+      style={{
+        backgroundImage: `url(${item.backgroundUrl})`,
+      }} 
+      key={item.id}
+    >
+      <div className="relative z-2 flex flex-col min-h-[22rem] p-6 md:p-[2.4rem]">
+        <h5 className="h5 mb-5">{item.title}</h5>
+        <p className="body-2 mb-6 text-n-3">{item.text}</p> 
+        <div className="flex items-center mt-auto">
+          <img 
+            src={item.iconUrl}
+            width={48}
+            height={48}
+            alt={item.title}
+          />
+          <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+            Explore more
+          </p>
+          <Arrow />
+        </div>
+      </div>
 
-                  {item.light && <GradientLight />}
+      {item.light && <GradientLight />}
 
-                  <div 
-                     className="absolute inset-0.5 bg-n-8"
-                     style={{ clipPath:"url(#benefits)" }} 
-                     >
-                      <div className="absolute inset-0
-                        opacity-0 transition-opacity
-                        group-hover:opacity-10 pointer-events-none">
-                        {item.imageUrl && (
-                          <img 
-                             src={item.imageUrl}
-                             width={380}
-                             height={362}
-                             alt={item.title}
-                             className="w-full h-full
-                               object-cover"
-                             />
-                        )}
-                      </div>
-                    </div>
+      <div 
+        className="absolute inset-0.5 bg-n-8"
+        style={{ clipPath:"url(#benefits)" }} 
+      >
+        <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10 pointer-events-none">
+          {item.imageUrl && (
+            <img 
+              src={item.imageUrl}
+              width={380}
+              height={362}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+          )}
+        </div>
+      </div>
 
-                    <ClipPath />
-                </div>
-              ))}
-            </div>
+      <ClipPath />
+    </div>
+  ))}
+</div>  
         </div>
     </section>
   )
